@@ -10,19 +10,54 @@
   <link rel="stylesheet" href="style.css">
   <title>Super ToDo</title>
 </head>
+
 <body>
   <span class="logoWrapper">Super ToDo</span>
+  
   <main>
     <section class="addLine">
       <button class="addButton">+</button>
-      <span>O que você tem planejado para hoje?</span>
+      <input type="text" placeholder="O que você tem planejado pra hoje?" />
     </section>
+
     <section class="itemsContainer">
-      <div class="toDoItem">Passear com o cachorro</div>
-      <div class="toDoItem">Fazer deploy do bot do Discord</div>
-      <div class="toDoItem">Levar a filha na escola</div>
-      <div class="toDoItem">Compartilhar a comunidade da workabits nas redes sociais</div>
+      <div class="toDoItem">
+        <div class="custom-checkbox">
+          <input type="checkbox" id="checkbox"></input>
+          <label for="checkbox"></label>
+        </div>
+        <span>Passear com o cachorro</span>
+      </div>
+
+      <div class="toDoItem">
+        <div class="custom-checkbox">
+          <input type="checkbox" id="checkbox"></input>
+          <label for="checkbox"></label>
+        </div>
+        <span>Fazer deploy do bot do Discord</span>
+      </div>
+
+      <div class="toDoItem">
+        <div class="custom-checkbox">
+          <input type="checkbox" id="checkbox"></input>
+          <label for="checkbox"></label>
+        </div>
+        <span>Levar a filha na escola</span>
+      </div>
+
+      <div class="toDoItem">
+        <div class="custom-checkbox">
+          <input type="checkbox" id="checkbox"></input>
+          <label for="checkbox"></label>
+        </div>
+        <span>Compartilhar a comunidade da workabits nas redes sociais</span>
+      </div>
+
+      
     </section>
   </main>
+
+  <div class="roundGlowR"></div>
+  <div class="roundGlowL"></div>
 </body>
  

@@ -11,15 +11,16 @@
   --white-border: #FFFFFF;
 }
 
-body {
-  height: 100vh;
-  font-family: 'Poppins', sans-serif;
-
+html {
   background: linear-gradient(116.82deg, #0C0C0C 0%, #242424 52.6%, #000000 100%);
   background-size: cover;
   background-position: center center;
+  min-height: 100vh;
+}
 
-  padding: 0 1rem;
+body {
+  font-family: 'Poppins', sans-serif;
+  padding: 0 1rem 2rem;
 }
 
 span.logoWrapper {
@@ -36,25 +37,24 @@ span.logoWrapper {
 }
 
 main {
+  display: flex;
+  flex-direction: column;
+  margin: 8.625rem auto 0;
   width: 100%;
   max-width: 912px;
-  margin-top: 8.625rem;
-  /* background-color: rgb(22, 22, 83); */
 }
 
 section.addLine {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  column-gap: 1rem;
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  column-gap: 1rem ;
 
-  height: max-content;
+  height: 100%;
   max-height: 71px;
 
   color: var(--white-add);
   font-weight: 600;
   font-size: 0.875rem;
-  /* font-size: 1.25rem; */
 
   border: 0.5px solid var(--white-border);
   border-radius: 16px;
@@ -62,7 +62,18 @@ section.addLine {
   padding: 0.5rem 0.875rem;
 }
 
-.addButton {
+section.addLine input {
+  width: 100%;
+  background: transparent;
+  border: 0;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: var(--white-items);
+
+  /* margin-left: 1rem; */
+}
+
+section.addLine .addButton {
   width: 50px;
   height: 50px;
   border-radius: 20px;
@@ -73,4 +84,102 @@ section.addLine {
   font-weight: 700;
 
   background: radial-gradient(76.75% 76.75% at 70% 23.25%, #D255DD 0%, #6709DF 100%)
+}
+
+section.itemsContainer {
+  display: flex;
+  flex-direction: column;
+  height: max-content;
+  margin-top: 2rem;
+
+  color: var(--white-items);
+}
+
+.toDoItem {
+  display: grid;
+  align-items: center;
+
+  grid-template-columns: 32px 1fr;
+  column-gap: 1rem;
+
+  height: 71px;
+
+  font-weight: 400;
+  font-size: 0.875rem;
+
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%);
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  padding: 0.5rem 0.875rem;
+}
+
+.toDoItem + .toDoItem {
+  margin-top: 1rem;
+}
+
+.custom-checkbox {
+  position: relative;
+  width: 32px;
+  height: 32px;
+}
+
+.custom-checkbox label {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.2) 100%);;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  cursor: pointer;
+  height: 32px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 32px;
+}
+
+.custom-checkbox label::after {
+  position: absolute;
+  left: 8px;
+  top: 9px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-right: none;
+  content: "";
+  height: 6px;
+  width: 12px;
+  opacity: 0;
+  transform: rotate(-45deg);
+}
+
+input[type="checkbox"] {
+  visibility: hidden;
+}
+
+input[type="checkbox"]:checked + label{
+  background-color: #66bb6a;
+  border-color: #66bb6a;
+}
+
+input[type="checkbox"]:checked + label:after{
+  opacity: 1;
+}
+
+.roundGlowR {
+  position: absolute;
+  width: calc(10rem + 15vw);
+  height: calc(10rem + 15vw);
+  right: 0;
+  top: 0;
+
+  background: radial-gradient(76.75% 76.75% at 70% 23.25%, rgba(114, 4, 123, 0.5) 0%, rgba(103, 9, 223, 0.5) 100%);
+  filter: blur(calc(100px + 2vw));
+}
+
+.roundGlowL {
+  position: absolute;
+  width: calc(10rem + 15vw);
+  height: calc(10rem + 15vw);
+  left: 0;
+  bottom: 0;
+
+  background: radial-gradient(76.75% 76.75% at 70% 23.25%, rgba(114, 4, 123, 0.5) 0%, rgba(103, 9, 223, 0.5) 100%);
+  filter: blur(calc(100px + 2vw));
 }
