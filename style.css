@@ -23,17 +23,26 @@ body {
   padding: 0 1rem 2rem;
 }
 
-span.logoWrapper {
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+
   position: absolute;
-  width: 140px;
+  width: max-content;
   height: 36px;
-  left: 2rem;
+  left: 1rem;
   top: 1.375rem;
 
   color: var(--white-logo);
   font-weight: 700;
   font-size: 1.5rem;
   line-height: 2.25rem;
+}
+
+.logoWrapper img {
+  height: 100%;
 }
 
 main {
