@@ -1,36 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Super ToDo</title>
-  </head>
-  <body>
-    <header class="logoContainer">
-      <img src="public/workbits-logo.png" width="58px" height="58px" />
-      <span class="logoWrapper">Super ToDo</span>
-    </header>
-    <main>
-      <section class="addLine">
-        <button class="addButton">+</button>
-        <span>O que você tem planejado para hoje?</span>
-      </section>
-      <section class="itemsContainer">
-        <div class="toDoItem">Passear com o cachorro</div>
-        <div class="toDoItem">Fazer deploy do bot do Discord</div>
-        <div class="toDoItem">Levar a filha na escola</div>
-        <div class="toDoItem">
-          Compartilhar a comunidade da workabits nas redes sociais
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="style.css">
+  <title>Super ToDo</title>
+</head>
+
+<body>
+  <div class="logoWrapper">
+    <img src="./assets/workbits-logo.png" alt="workbits logo">
+    <span class="logoText">Super ToDo</span>
+  </div>
+  
+  <main>
+    <section class="addLine">
+      <button class="addButton">+</button>
+      <input type="text" placeholder="O que você tem planejado pra hoje?" />
+    </section>
+
+    <section class="itemsContainer">
+      <div class="toDoItem">
+        <div class="custom-checkbox">
+          <input type="checkbox" id="checkbox1"></input>
+          <label for="checkbox1"></label>
         </div>
-      </section>
-    </main>
-  </body>
-</html>
+        <span>Passear com o cachorro</span>
+      </div>
+
+      <div class="toDoItem">
+        <div class="custom-checkbox">
+          <input type="checkbox" id="checkbox2"></input>
+          <label for="checkbox2"></label>
+        </div>
+        <span>Fazer deploy do bot do Discord</span>
+      </div>
+
+      <div class="toDoItem">
+        <div class="custom-checkbox">
+          <input type="checkbox" id="checkbox3"></input>
+          <label for="checkbox3"></label>
+        </div>
+        <span>Levar a filha na escola</span>
+      </div>
+
+      <div class="toDoItem">
+        <div class="custom-checkbox">
+          <input type="checkbox" id="checkbox4"></input>
+          <label for="checkbox4"></label>
+        </div>
+        <span>Compartilhar a comunidade da workabits nas redes sociais</span>
+      </div>
+
+      
+    </section>
+  </main>
+
+  <div class="roundGlowR"></div>
+  <div class="roundGlowL"></div>
+</body>
