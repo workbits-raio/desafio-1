@@ -18,48 +18,17 @@
   </div>
   
   <main>
-    <section class="add--line">
-      <button class="add--button">+</button>
-      <input class="add--input" type="text" placeholder="O que você tem planejado pra hoje?" />
-    </section>
-
-    <section class="items--container">
-      <div class="todo--item">
-        <div class="custom--checkbox">
-          <input class="todo--checkbox" type="checkbox" id="checkbox1"></input>
-          <label for="checkbox1"></label>
-        </div>
-        <span>Passear com o cachorro</span>
-      </div>
-
-      <div class="todo--item">
-        <div class="custom--checkbox">
-          <input class="todo--checkbox" type="checkbox" id="checkbox2"></input>
-          <label for="checkbox2"></label>
-        </div>
-        <span>Fazer deploy do bot do Discord</span>
-      </div>
-
-      <div class="todo--item">
-        <div class="custom--checkbox">
-          <input class="todo--checkbox" type="checkbox" id="checkbox3"></input>
-          <label for="checkbox3"></label>
-        </div>
-        <span>Levar a filha na escola</span>
-      </div>
-
-      <div class="todo--item">
-        <div class="custom--checkbox">
-          <input class="todo--checkbox" type="checkbox" id="checkbox4"></input>
-          <label for="checkbox4"></label>
-        </div>
-        <span>Compartilhar a comunidade da workabits nas redes sociais</span>
-      </div>
-
-      
-    </section>
+    <form id="add--form" class="add--line">
+      <button type="submit" class="add--button">+</button>
+      <input type="text" class="add--input" placeholder="O que você tem planejado pra hoje?" required />
+    </form>
+    <ul class="items--container">
+      <!-- adicionado conforme a lista é modificada -->
+    </ul>
   </main>
 
   <div class="glow--right"></div>
   <div class="glow--left"></div>
+  <script src="index.js"></script>
 </body>
+</html>

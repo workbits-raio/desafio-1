@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="style.css">
+  <title>Super ToDo</title>
+</head>
+
+<body>
+  <div class="logo--wrapper">
+    <img src="./assets/workbits-logo.png" alt="workbits logo">
+    <span class="logo--text">Super ToDo</span>
+  </div>
+  
+  <main>
+    <form id="add--form" class="add--line">
+      <button type="submit" class="add--button">+</button>
+      <input type="text" class="add--input" placeholder="O que você tem planejado pra hoje?" />
+    </form>
+    <ul class="items--container">
+    <!-- "li" serão adicionados conforme o js muda -->
+    <li class="todo--item">
+        <div class="custom--checkbox">
+          <input class="todo--checkbox" type="checkbox" id="checkbox1"></input>
+          <label for="checkbox1"></label>
+        </div>
+        <span>Passear com o cachorro</span>
+      </li>
+
+      <li class="todo--item">
+        <div class="custom--checkbox">
+          <input class="todo--checkbox" type="checkbox" id="checkbox2"></input>
+          <label for="checkbox2"></label>
+        </div>
+        <span>Fazer deploy do bot do Discord</span>
+      </li>
+
+      <li class="todo--item">
+        <div class="custom--checkbox">
+          <input class="todo--checkbox" type="checkbox" id="checkbox3"></input>
+          <label for="checkbox3"></label>
+        </div>
+        <span>Levar a filha na escola</span>
+      </li>
+
+      <li class="todo--item">
+        <div class="custom--checkbox">
+          <input class="todo--checkbox" type="checkbox" id="checkbox4"></input>
+          <label for="checkbox4"></label>
+        </div>
+        <span>Compartilhar a comunidade da workabits nas redes sociais</span>
+      </li>
+    </ul>
+  </main>
+
+  <div class="glow--right"></div>
+  <div class="glow--left"></div>
+</body>
+</html>
