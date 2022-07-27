@@ -8,29 +8,35 @@ const addForm = document.getElementById("add--form");
 addForm.addEventListener("submit", addToDo);
 
 function addToDo(event) {
-    if (addInput.value != "") {
-        addToDB();
-    }
+  event.preventDefault();
 
-    event.preventDefault();
-};
+  if (addInput.value.split("").length > 100) {
+    alert("Limite de 100 caracteres");
+    addInput.value = addInput.value.substring(0, 100);
+    return;
+  }
+
+  if (addInput.value != "") {
+    addToDB();
+  }
+}
 
 function addToDB() {
-    if (itensDB.length >= 20) {
-      alert("Limite máximo de 20 itens atingido!");
-      return;
-    }
-  
-    itensDB.push({ item: addInput.value, status: "" });
-    updateDB();
+  if (itensDB.length >= 20) {
+    alert("Limite máximo de 20 itens atingido!");
+    return;
   }
-  
+
+  itensDB.push({ item: addInput.value, status: "" });
+  updateDB();
+}
+
 // end of add todos function
 
 // start of update db
 function updateDB() {
   localStorage.setItem("todolist", JSON.stringify(itensDB));
-  console.log('db itens -> ', itensDB)
+  console.log("db itens -> ", itensDB);
   loadItems();
 }
 // end of update db
@@ -48,7 +54,7 @@ function loadItems() {
 // start of display items
 function displayItems(text, status, i) {
   const li = document.createElement("li");
-    li.innerHTML = `
+  li.innerHTML = `
         <div class="todo--item">
             <div class="custom--checkbox">
                 <input id="checkbox${i}" class="todo--checkbox" type="checkbox"" ${status} data-i=${i} onchange="completeItem(this, ${i});" ></input>
@@ -62,7 +68,9 @@ function displayItems(text, status, i) {
   if (status) {
     document.querySelector(`[data-si="${i}"]`).classList.add("item--complete");
   } else {
-    document.querySelector(`[data-si="${i}"]`).classList.remove("item--complete");
+    document
+      .querySelector(`[data-si="${i}"]`)
+      .classList.remove("item--complete");
   }
 
   addInput.value = "";
