@@ -26,6 +26,7 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   padding: 0 1rem 2rem;
+  overflow-x: hidden;
 }
 
 main {
@@ -277,9 +278,6 @@ input.todo--checkbox:checked + label:after {
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
-body{
-  overflow: hidden;
-}
 .wrapper{
   position: absolute;
   top: 2rem;
