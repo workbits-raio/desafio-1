@@ -19,17 +19,14 @@ window.onload = () => {
         title.innerText = "Conexão restaurada";
         subTitle.innerText = "Seus dados estão salvos offline.";
         wifiIcon.innerHTML = '<i class="uil uil-wifi"></i>';
-        closeIcon.onclick = () => {
-          //ocultar a notificação do sistema ao clicar no ícone de fechar
-          wrapper.classList.add("hide");
-        };
+
         const myTimeout = setTimeout(() => {
           //oculta a notificação do sistema automaticamente após 7 segundos
-          wrapper.classList.add("hide");
+          //   wrapper.classList.add("hide");
         }, 7000);
 
         // limpar o timeout pra evitar "memory leak"
-        return () => clearTimeout(myTimeout)
+        return () => clearTimeout(myTimeout);
       } else {
         offline(); //chamando a função offline se o status do ajax não for igual a 200 ou não menor que 300
       }
@@ -55,5 +52,11 @@ window.onload = () => {
   }, 500);
 
   // limpeza para evitar memory leak
-  return () => clearInterval(callInterval)
+  return () => clearInterval(callInterval);
+};
+
+function closeToast() {
+  //ocultar a notificação do sistema ao clicar no ícone de fechar
+//   alert("click");
+  wrapper.classList.add("hide");
 };

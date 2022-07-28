@@ -283,6 +283,8 @@ input.todo--checkbox:checked + label:after {
   top: 2rem;
   right: 5rem;
   animation: show_toast 1s ease forwards;
+  z-index: 10;
+  cursor: pointer;
 }
 @keyframes show_toast {
   0%{
@@ -351,19 +353,4 @@ input.todo--checkbox:checked + label:after {
 }
 .details p{
   color: #878787;
-}
-.toast .close-icon{
-  color: #878787;
-  font-size: 23px;
-  cursor: pointer;
-  height: 40px;
-  width: 40px;
-  text-align: center;
-  line-height: 40px;
-  border-radius: 50%;
-  background: #f2f2f2;
-  transition: all 0.3s ease;
-}
-.close-icon:hover{
-  background: #efefef;
 }
