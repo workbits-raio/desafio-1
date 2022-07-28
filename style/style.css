@@ -268,7 +268,7 @@ input.todo--checkbox:checked + label:after {
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
 .wrapper {
-  position: absolute;
+  position: fixed;
   top: 2rem;
   right: 1rem;
   animation: show_toast 1s ease forwards;
