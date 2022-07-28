@@ -148,6 +148,7 @@ ul.items--container {
 .todo--item {
   display: grid;
   align-items: center;
+  word-break: break-all;
 
   grid-template-columns: 32px 1fr;
   column-gap: 1rem;
@@ -285,6 +286,8 @@ input.todo--checkbox:checked + label:after {
   animation: show_toast 1s ease forwards;
   z-index: 10;
   cursor: pointer;
+  width: 100%;
+  max-width: 430px;
 }
 @keyframes show_toast {
   0%{
@@ -319,10 +322,11 @@ input.todo--checkbox:checked + label:after {
   border-radius: 10px;
   border-left: 5px solid #2ecc71;
   box-shadow: 1px 7px 14px -5px rgba(0,0,0,0.15);
-  width: 430px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  width: 100%;
+  max-width: 430px;
 }
 .wrapper .toast.offline{
   border-color: #ccc;

@@ -22,7 +22,7 @@ window.onload = () => {
 
         const myTimeout = setTimeout(() => {
           //oculta a notificação do sistema automaticamente após 7 segundos
-          //   wrapper.classList.add("hide");
+            wrapper.classList.add("hide");
         }, 7000);
 
         // limpar o timeout pra evitar "memory leak"
