@@ -26,6 +26,7 @@ html {
 body {
   font-family: "Poppins", sans-serif;
   padding: 0 1rem 2rem;
+  overflow-x: hidden;
 }
 
 main {
@@ -34,7 +35,7 @@ main {
   margin: 6.375rem auto 0;
   width: 100%;
   max-width: 912px;
-  animation: fade--in .65s;
+  animation: fade--in 0.65s;
 }
 
 .logo--wrapper {
@@ -147,6 +148,7 @@ ul.items--container {
 .todo--item {
   display: grid;
   align-items: center;
+  word-break: break-all;
 
   grid-template-columns: 32px 1fr;
   column-gap: 1rem;
@@ -263,12 +265,126 @@ input.todo--checkbox:checked + label:after {
   font-style: italic;
 }
 
-/* keyframes */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+.wrapper {
+  position: fixed;
+  top: 2rem;
+  right: 1rem;
+  animation: show_toast 1s ease forwards;
+  z-index: 10;
+  cursor: pointer;
+  width: 100%;
+  max-width: 430px;
+  border-radius: 16px;
+
+  background: #1e1e1e;
+}
+
+.wrapper.hide {
+  animation: hide_toast 1s ease forwards;
+}
+
+.wrapper .toast {
+  background: linear-gradient(
+    152.97deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  border: 0.5px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(42px);
+
+  border-radius: 16px;
+  padding: 20px 15px 20px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 430px;
+}
+
+.toast .content {
+  display: flex;
+  align-items: center;
+}
+.content .icon {
+  font-size: 25px;
+  color: #fff;
+  height: 50px;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 50%;
+  background: radial-gradient(
+      76.75% 76.75% at 70% 23.25%,
+      #70dd55 0%,
+      #67df09 100%
+    )
+    /* warning: gradient uses a rotation that is not supported by CSS and may not behave as expected */;
+}
+.toast.offline .content .icon {
+  background: radial-gradient(
+    76.75% 76.75% at 70% 23.25%,
+    #dd5555 0%,
+    #df0909 100%
+  );
+}
+.content .details {
+  margin-left: 15px;
+}
+.details span {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+}
+.details p {
+  color: #fff;
+}
+
+/* media querie starts */
+@media (max-width: 700px) {
+  main {
+    margin: 2.85rem auto 0;
+  }
+}
+
+@media (max-width: 430px) {
+  .wrapper {
+    top: 0;
+    right: 0;
+    border-radius: 0;
+  }
+  .toast {
+    border-radius: 0 !important;
+  }
+}
+
+/* keyframe starts */
 @keyframes fade--in {
   0% {
     opacity: 0;
   }
   100% {
     opacity: 1;
+  }
+}
+
+@keyframes show_toast {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes hide_toast {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
   }
 }
