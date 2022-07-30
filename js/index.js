@@ -26,7 +26,6 @@ function addToDB() {
     alert("Limite máximo de 20 itens atingido!");
     return;
   }
-
   itensDB.push({ item: addInput.value, status: "" });
   updateDB();
 }
@@ -61,6 +60,9 @@ function displayItems(text, status, i) {
                 <label for="checkbox${i}"></label>
             </div>
             <span data-si=${i}>${text}</span>
+            <div>            
+              <button class="todo--remove" onmousedown="removeItem(${i})"><i class='bx bxs-trash-alt'></i></button>
+            </div>
         </div>
     `;
   ul.appendChild(li);
