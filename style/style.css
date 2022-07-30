@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -268,7 +270,16 @@ input.todo--checkbox:checked + label:after {
   font-style: italic;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+.todo--remove {
+  width: 32px;
+  height: 32px;
+  color: #f2f2f2;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: linear-gradient( 135deg, rgba(255, 255, 255, 0) 30%, rgba(255, 255, 255, 0.2) 100% );
+  border-radius: 10px;
+  inline: none;
+  cursor: pointer;
+}
 
 .wrapper {
   position: fixed;

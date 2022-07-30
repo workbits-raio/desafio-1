@@ -9,7 +9,7 @@ addForm.addEventListener("submit", addToDo);
 
 function addToDo(event) {
   event.preventDefault();
-  
+
   if (addInput.value.split("").length > 100) {
     alert("Limite de 100 caracteres");
     addInput.value = addInput.value.substring(0, 100);
@@ -61,7 +61,7 @@ function displayItems(text, status, i) {
             </div>
             <span data-si=${i}>${text}</span>
             <div>            
-              <button onmousedown="removeItem(${i})"><i class='bx bxs-trash-alt'></i></button>
+              <button class="todo--remove" onmousedown="removeItem(${i})"><i class='bx bxs-trash-alt'></i></button>
             </div>
         </div>
     `;
