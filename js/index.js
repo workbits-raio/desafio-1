@@ -2,13 +2,6 @@ var itensDB = [];
 
 const addInput = document.querySelector("input.add--input");
 const ul = document.querySelector("ul.items--container");
-const btnDeleteAll = document.querySelector('.logo--wrapper button');
-
-// start of delete
-btnDeleteAll.onclick = () => {
-  itensDB = []
-  updateDB()
-}
 
 // start of add todos function
 const addForm = document.getElementById("add--form");
@@ -16,7 +9,7 @@ addForm.addEventListener("submit", addToDo);
 
 function addToDo(event) {
   event.preventDefault();
-
+  
   if (addInput.value.split("").length > 100) {
     alert("Limite de 100 caracteres");
     addInput.value = addInput.value.substring(0, 100);
@@ -33,7 +26,6 @@ function addToDB() {
     alert("Limite máximo de 20 itens atingido!");
     return;
   }
-
   itensDB.push({ item: addInput.value, status: "" });
   updateDB();
 }
@@ -68,6 +60,9 @@ function displayItems(text, status, i) {
                 <label for="checkbox${i}"></label>
             </div>
             <span data-si=${i}>${text}</span>
+            <div>            
+              <button onmousedown="removeItem(${i})"><i class='bx bxs-trash-alt'></i></button>
+            </div>
         </div>
     `;
   ul.appendChild(li);

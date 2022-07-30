@@ -146,12 +146,9 @@ ul.items--container {
 }
 
 .todo--item {
-  display: grid;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
-  word-break: break-all;
-
-  grid-template-columns: 32px 1fr;
-  column-gap: 1rem;
 
   height: 71px;
 
@@ -166,6 +163,12 @@ ul.items--container {
   border: 0.5px solid rgba(255, 255, 255, 0.3);
   border-radius: 16px;
   padding: 0.5rem 0.875rem;
+}
+
+.todo--item span {
+  text-align: left;
+  width: 100%;
+  padding: 0 1rem;
 }
 
 .custom--checkbox {
